@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SearchForm() {
+  const navigate = useNavigate();
   const [location, setLocation] = useState("");
   const [style, setStyle] = useState("");
   const [rooms, setRooms] = useState("");
@@ -112,7 +114,10 @@ export default function SearchForm() {
 
             {/* Generate Button */}
             <div className="flex items-end">
-              <button className="bg-navy text-white text-sm font-medium rounded-full px-8 py-3 hover:bg-navy/90 transition-colors h-12 self-end">
+              <button
+                onClick={() => navigate("/generate-design")}
+                className="bg-navy text-white text-sm font-medium rounded-full px-8 py-3 hover:bg-navy/90 transition-colors h-12 self-end"
+              >
                 Generate Now
               </button>
             </div>
