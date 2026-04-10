@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export default function HeroSection() {
+  const navigate = useNavigate();
+
   return (
     <section
       className="relative w-full overflow-hidden"
@@ -24,10 +28,16 @@ export default function HeroSection() {
           lifestyle needs—without needing an architect at the early stage.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
-          <button className="bg-navy text-white text-sm font-medium rounded-full px-7 py-3 hover:bg-navy/90 transition min-w-[220px] shadow-lg">
+          <button
+            onClick={() => navigate("/generate-design")}
+            className="bg-navy text-white text-sm font-medium rounded-full px-7 py-3 hover:bg-navy/90 transition min-w-[220px] shadow-lg"
+          >
             Generate Diagram with AI
           </button>
-          <button className="bg-navy text-white text-sm font-medium rounded-full px-7 py-3 hover:bg-navy/90 transition min-w-[220px] shadow-lg">
+          <button
+            onClick={() => navigate("/generate-design")}
+            className="bg-navy text-white text-sm font-medium rounded-full px-7 py-3 hover:bg-navy/90 transition min-w-[220px] shadow-lg"
+          >
             Generate Design with AI
           </button>
         </div>
